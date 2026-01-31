@@ -3,214 +3,194 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Selenium Automation With Java + Gen AI | Certification + Live Project</title>
-<meta name="description" content="Selenium Automation Testing with Java, TestNG, Maven and Gen AI. Live project, certification and job-ready training.">
-
+<title>Selenium Automation with Java + GenAI | Certification Course</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- ✅ SEO SCHEMA MARKUP -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Course",
- "name": "Selenium Automation With Java + Gen AI",
- "description": "Comprehensive Selenium automation training with Java, TestNG, Maven and Gen AI integration including live project and certification.",
- "provider": {
-   "@type": "Organization",
-   "name": "Your Institute Name",
-   "sameAs": "https://yourdomain.com"
- }
-}
-</script>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins, sans-serif}
-body{background:#f4f6f9;color:#222}
-
-/* ✅ NAVBAR */
-nav{
-position:sticky;top:0;background:white;
-box-shadow:0 2px 8px rgba(0,0,0,0.1);
-padding:15px 0;z-index:1000
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background:#f9fbfd;
+  color:#333;
 }
-nav .container{display:flex;justify-content:space-between;align-items:center}
-nav a{margin-left:20px;text-decoration:none;color:#333;font-weight:600}
-nav a:hover{color:#ff7a00}
-
-.container{width:90%;margin:auto}
-header{background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);color:white;padding:60px 0}
-.hero{display:flex;gap:40px;align-items:center}
-.hero-left{flex:60%}
-.hero-right{flex:40%;background:white;color:black;padding:25px;border-radius:10px}
-h1{font-size:38px;margin:15px 0}
-button{padding:12px 20px;border:none;background:#ff7a00;color:white;border-radius:5px;cursor:pointer;font-weight:600}
-input,textarea{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:4px}
-
-.section{padding:60px 0}
-.flex{display:flex;gap:40px}
-.main{flex:70%}
-.sidebar{flex:30%}
-.tab-content{display:none;background:white;padding:25px;border-radius:8px;margin-top:15px}
-.tabs button{background:#e0e0e0;color:black;margin-right:5px}
-
-.card{background:white;padding:25px;border-radius:10px;margin-bottom:20px}
-.testimonials{display:flex;gap:20px}
-.testimonial{flex:1;background:white;padding:20px;border-radius:8px}
-
-.roadmap img{width:100%;border-radius:10px}
-
-.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center}
-.popup-content{background:white;padding:25px;border-radius:6px;width:340px}
-.close{float:right;cursor:pointer;font-weight:bold}
-
+header{
+  background:#0d6efd;
+  color:#fff;
+  padding:15px 40px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header h2{margin:0;}
+nav a{
+  color:#fff;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:500;
+}
+.hero{
+  padding:80px 40px;
+  text-align:center;
+  background:#eaf2ff;
+}
+.hero h1{
+  font-size:40px;
+  margin-bottom:10px;
+}
+.hero p{
+  font-size:18px;
+  max-width:700px;
+  margin:auto;
+}
+.btn{
+  margin-top:20px;
+  padding:12px 25px;
+  background:#0d6efd;
+  color:#fff;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:16px;
+}
+.section{
+  padding:60px 40px;
+}
+.section h2{
+  text-align:center;
+  margin-bottom:40px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.testimonials{
+  background:#eef4ff;
+}
+.faq-item{
+  margin-bottom:15px;
+}
+.faq-item h4{
+  margin:0;
+}
+form{
+  max-width:500px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+}
+input, textarea{
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+footer{
+  background:#0d6efd;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
 .whatsapp{
-position:fixed;bottom:20px;right:20px;background:#25D366;color:white;
-padding:15px 18px;border-radius:50%;font-size:22px;text-decoration:none
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
 }
 </style>
 </head>
-
 <body>
 
-<!-- ✅ STICKY NAVBAR -->
-<nav>
-<div class="container">
-<div><b>Selenium + Gen AI Course</b></div>
-<div>
-<a href="#about">About</a>
-<a href="#curriculum">Curriculum</a>
-<a href="#roadmap">Roadmap</a>
-<a href="#testimonials">Testimonials</a>
-</div>
-</div>
-</nav>
-
-<!-- HEADER -->
 <header>
-<div class="container hero">
-<div class="hero-left">
-<h3>TestNG | Java | Maven | Automation | Gen AI</h3>
-<h1>Selenium Automation With Java + Gen AI</h1>
-<p>Certification + Live Project + Real-time Experience</p>
-<br>
-<button onclick="openPopup('demoPopup')">Join Free Demo</button>
-<button onclick="openPopup('curriculumPopup')">Download Curriculum</button>
-</div>
-
-<div class="hero-right">
-<h3>Enquiry Form</h3>
-<form action="https://formspree.io/f/xbdybwzn" method="POST">
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Email" required>
-<input type="tel" placeholder="Phone" required>
-<textarea placeholder="Message"></textarea>
-<button type="submit">Submit</button>
-</form>
-</div>
-</div>
+  <h2>Selenium + GenAI Course</h2>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="#enquiry">Enquiry</a>
+  </nav>
 </header>
 
-<!-- ROADMAP -->
-<div id="roadmap" class="section container roadmap">
-<h2>Course Roadmap</h2><br>
-<img src="roadmap.jpg" alt="Selenium Automation Roadmap">
-</div>
+<section class="hero">
+  <h1>Selenium Automation with Java + Generative AI</h1>
+  <p>Master End-to-End Automation Testing with Real Time Project, Certification and Job-Oriented Training.</p>
+  <button class="btn" onclick="document.getElementById('enquiry').scrollIntoView()">Enroll for Free Demo</button>
+</section>
 
-<!-- TABS + SIDEBAR -->
-<div class="section container flex">
-<div class="main">
+<section id="features" class="section">
+  <h2>Course Highlights</h2>
+  <div class="cards">
+    <div class="card">Live Project Based Learning</div>
+    <div class="card">Selenium with Java from Scratch</div>
+    <div class="card">Using GenAI in Automation Testing</div>
+    <div class="card">Maven, TestNG, Framework Design</div>
+    <div class="card">Resume + Interview Preparation</div>
+    <div class="card">Certification & Placement Support</div>
+  </div>
+</section>
 
-<div class="tabs">
-<button onclick="showTab('aboutTab')">About Course</button>
-<button onclick="showTab('curriculumTab')">Curriculum</button>
-<button onclick="showTab('faqTab')">FAQs</button>
-</div>
+<section id="roadmap" class="section">
+  <h2>Course Roadmap</h2>
+  <div class="cards">
+    <div class="card">Java Basics for Automation</div>
+    <div class="card">Selenium WebDriver Concepts</div>
+    <div class="card">Locators, Waits, Actions</div>
+    <div class="card">TestNG, Maven, Framework</div>
+    <div class="card">GenAI Usage in Test Case Creation</div>
+    <div class="card">Live Project Implementation</div>
+  </div>
+</section>
 
-<div id="aboutTab" class="tab-content">
-<h2 id="about">About Course</h2>
-<p>Hands-on Selenium, Java, TestNG, Maven with Gen AI integration and live project.</p>
-</div>
+<section id="testimonials" class="section testimonials">
+  <h2>Student Testimonials</h2>
+  <div class="cards">
+    <div class="card">"Got job within 45 days after course completion!"</div>
+    <div class="card">"Best practical training with real time project."</div>
+    <div class="card">"GenAI usage in testing is next level learning."</div>
+  </div>
+</section>
 
-<div id="curriculumTab" class="tab-content">
-<h2 id="curriculum">Curriculum</h2>
-<ul>
-<li>Java for Automation</li>
-<li>Selenium WebDriver</li>
-<li>TestNG Framework</li>
-<li>Maven Management</li>
-<li>Gen AI Integration</li>
-<li>Live Project</li>
-</ul>
-</div>
+<section id="faq" class="section">
+  <h2>FAQ</h2>
+  <div class="faq-item">
+    <h4>Who can join this course?</h4>
+    <p>Freshers, manual testers, and developers.</p>
+  </div>
+  <div class="faq-item">
+    <h4>Do you provide certification?</h4>
+    <p>Yes, course completion certification is provided.</p>
+  </div>
+</section>
 
-<div id="faqTab" class="tab-content">
-<h2>FAQs</h2>
-<p><b>Certification?</b> Yes.</p>
-<p><b>Live project?</b> Yes.</p>
-</div>
+<section id="enquiry" class="section">
+  <h2>Enquiry Form</h2>
+  <form action="https://formsubmit.co/your-email@example.com" method="POST">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message"></textarea>
+    <button class="btn" type="submit">Submit</button>
+  </form>
+</section>
 
-</div>
+<footer>
+  © 2026 Selenium + GenAI Training | All Rights Reserved
+</footer>
 
-<div class="sidebar">
-<div class="card">
-<h3>Quick Enquiry</h3>
-<form action="https://formspree.io/f/xbdybwzn" method="POST">
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
-<button>Submit</button>
-</form>
-</div>
-</div>
-</div>
-
-<!-- TESTIMONIALS -->
-<div id="testimonials" class="section container">
-<h2>Student Testimonials</h2><br>
-<div class="testimonials">
-<div class="testimonial">Best Selenium training with real-time project.</div>
-<div class="testimonial">Gen AI usage in testing is excellent.</div>
-<div class="testimonial">Got job after completing this course.</div>
-</div>
-</div>
-
-<!-- POPUPS -->
-<div id="demoPopup" class="popup">
-<div class="popup-content">
-<span class="close" onclick="closePopup('demoPopup')">X</span>
-<h3>Join Free Demo</h3>
-<form action="https://formspree.io/f/xbdybwzn" method="POST">
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
-<button>Register</button>
-</form>
-</div>
-</div>
-
-<div id="curriculumPopup" class="popup">
-<div class="popup-content">
-<span class="close" onclick="closePopup('curriculumPopup')">X</span>
-<h3>Download Curriculum</h3>
-<form action="https://formspree.io/f/xbdybwzn" method="POST">
-<input type="email" placeholder="Enter Email">
-<button>Download</button>
-</form>
-</div>
-</div>
-
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/919999999999" target="_blank">💬</a>
-
-<script>
-function showTab(id){
-document.querySelectorAll('.tab-content').forEach(tab=>tab.style.display='none');
-document.getElementById(id).style.display='block';
-}
-showTab('aboutTab');
-
-function openPopup(id){document.getElementById(id).style.display='flex'}
-function closePopup(id){document.getElementById(id).style.display='none'}
-</script>
+<a class="whatsapp" href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
 
 </body>
 </html>
