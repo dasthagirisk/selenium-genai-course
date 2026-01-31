@@ -9,7 +9,15 @@
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  line-height:1.6;
+  background:#f3f4f6;
+}
+
+/* BOXED LAYOUT */
+.wrapper{
+  max-width:1200px;
+  margin:auto;
+  background:#fff;
+  box-shadow:0 0 15px rgba(0,0,0,0.1);
 }
 
 /* TOP BANNER */
@@ -26,49 +34,50 @@ header{
   position:sticky;
   top:0;
   background:#fff;
-  padding:12px 40px;
+  padding:15px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   box-shadow:0 2px 5px rgba(0,0,0,0.1);
   z-index:999;
 }
-
 header a{
   text-decoration:none;
-  color:#333;
   margin-left:20px;
+  color:#333;
   font-weight:600;
 }
 
-/* HERO */
+/* HERO 65 / 35 */
 .hero{
-  color:#fff;
-  padding:90px 40px;
-  background:
-  linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-  url('https://images.unsplash.com/photo-1518770660439-4636190af475');
-  background-size:cover;
-  background-position:center;
-  text-align:left;
+  display:flex;
+  align-items:center;
+  padding:70px 40px;
+  gap:30px;
 }
-
+.hero-left{
+  flex:0 0 65%;
+}
+.hero-right{
+  flex:0 0 35%;
+}
+.hero-right img{
+  width:100%;
+  border-radius:10px;
+}
 .hero h1{
-  font-size:42px;
+  font-size:38px;
 }
-
 .hero p{
   font-size:18px;
   margin:15px 0;
 }
-
 .btn{
   background:#ff6b00;
   color:#fff;
   padding:12px 22px;
-  border:none;
-  border-radius:5px;
   text-decoration:none;
+  border-radius:5px;
   font-weight:bold;
 }
 
@@ -76,7 +85,6 @@ header a{
 .tabs{
   padding:60px 40px;
 }
-
 .tab-buttons button{
   padding:10px 20px;
   margin-right:10px;
@@ -85,12 +93,10 @@ header a{
   background:#eee;
   font-weight:bold;
 }
-
 .tab-content{
-  margin-top:20px;
   display:none;
+  margin-top:20px;
 }
-
 .tab-content.active{
   display:block;
 }
@@ -100,25 +106,21 @@ header a{
   padding:60px 40px;
   display:flex;
   gap:40px;
-  flex-wrap:wrap;
 }
-
 .roadmap img{
   width:100%;
   max-width:500px;
   aspect-ratio:2.35/1;
   border-radius:10px;
 }
-
 .grid{
   flex:1;
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:15px;
 }
-
 .grid div{
-  background:#f5f5f5;
+  background:#f3f4f6;
   padding:15px;
   border-radius:8px;
 }
@@ -128,11 +130,6 @@ header a{
   padding:60px 40px;
   background:#f9f9f9;
 }
-
-.enquiry form{
-  max-width:500px;
-}
-
 .enquiry input, .enquiry textarea{
   width:100%;
   padding:10px;
@@ -149,6 +146,12 @@ footer{
 
 /* MOBILE */
 @media(max-width:768px){
+  .hero{
+    flex-direction:column;
+  }
+  .hero-left, .hero-right{
+    flex:100%;
+  }
   .roadmap{
     flex-direction:column;
   }
@@ -168,6 +171,8 @@ function openTab(id){
 </head>
 <body>
 
+<div class="wrapper">
+
 <div class="top-banner">
 🚀 Free Demo: Selenium Automation with Java + GenAI | Live Project + Certification
 </div>
@@ -181,12 +186,19 @@ function openTab(id){
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>Selenium Automation with Java + Generative AI</h1>
-  <p>Master automation testing with real-time framework design and GenAI integration.</p>
-  <a href="#enquiry" class="btn">Book Free Demo</a>
+  <div class="hero-left">
+    <h1>Selenium Automation with Java + Generative AI</h1>
+    <p>Master automation testing with real-time framework design and GenAI integration.</p>
+    <a href="#enquiry" class="btn">Book Free Demo</a>
+  </div>
+  <div class="hero-right">
+    <img src="https://dummyimage.com/500x350/cccccc/000000&text=Selenium+GenAI+Course" alt="Course Image">
+  </div>
 </section>
 
+<!-- TABS -->
 <section id="tabs" class="tabs">
   <div class="tab-buttons">
     <button onclick="openTab('about')">About Course</button>
@@ -196,31 +208,32 @@ function openTab(id){
   </div>
 
   <div id="about" class="tab-content active">
-    <p>This course teaches Selenium Automation with Java integrated with Generative AI for faster test creation and smart debugging.</p>
+    <p>This course teaches Selenium Automation with Java integrated with Generative AI for smart test creation and debugging.</p>
   </div>
 
   <div id="curriculum" class="tab-content">
     <ul>
-      <li>Java Basics for Automation</li>
-      <li>Selenium WebDriver & Framework Design</li>
-      <li>TestNG, Maven, POM</li>
-      <li>GenAI for Test Case Generation</li>
+      <li>Java for Automation</li>
+      <li>Selenium WebDriver</li>
+      <li>Framework Design (POM, TestNG, Maven)</li>
+      <li>GenAI for Test Cases</li>
       <li>CI/CD Integration</li>
     </ul>
   </div>
 
   <div id="description" class="tab-content">
-    <p>Work on real-time projects and learn how companies build automation frameworks using Selenium and AI tools.</p>
+    <p>Hands-on live project with real framework design used in companies.</p>
   </div>
 
   <div id="faq" class="tab-content">
-    <p><strong>Who can join?</strong> Beginners to testers.</p>
-    <p><strong>Do I need coding?</strong> Basic Java is enough.</p>
+    <p><strong>Who can join?</strong> Beginners and testers.</p>
+    <p><strong>Is coding needed?</strong> Basic Java is enough.</p>
   </div>
 </section>
 
+<!-- ROADMAP -->
 <section id="roadmap" class="roadmap">
-  <img src="https://dummyimage.com/800x340/cccccc/000000&text=Career+Roadmap+Image" alt="Roadmap">
+  <img src="https://dummyimage.com/800x340/cccccc/000000&text=Career+Roadmap" alt="Roadmap">
   <div class="grid">
     <div>Java Foundations</div>
     <div>Selenium WebDriver</div>
@@ -231,19 +244,20 @@ function openTab(id){
   </div>
 </section>
 
+<!-- ENQUIRY -->
 <section id="enquiry" class="enquiry">
   <h2>Enquiry Form</h2>
-  <form>
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
-    <button class="btn">Submit</button>
-  </form>
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  <textarea placeholder="Your Message"></textarea>
+  <button class="btn">Submit</button>
 </section>
 
 <footer>
 © 2026 Selenium GenAI Course | All Rights Reserved
 </footer>
+
+</div>
 
 </body>
 </html>
