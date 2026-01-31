@@ -4,245 +4,246 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Selenium Automation with Java + GenAI</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{margin:0;font-family:Poppins;background:#eef3ff;color:#333}
-.container{width:90%;max-width:1200px;margin:auto}
-
-/* HEADER */
-header{
-  position:sticky;top:0;background:#0d6efd;color:#fff;
-  padding:15px 0;z-index:1000
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  line-height:1.6;
 }
-header .container{
-  display:flex;justify-content:space-between;align-items:center;
-}
-nav a{color:#fff;margin-left:20px;text-decoration:none;font-weight:500}
 
-/* HIGHLIGHT BANNER */
-.highlight-banner{
+/* TOP BANNER */
+.top-banner{
   background:#111827;
   color:#fff;
-  padding:25px 0;
   text-align:center;
+  padding:8px;
+  font-size:14px;
 }
-.highlight-banner h2{
-  margin:0;
-  font-size:26px;
+
+/* NAVBAR */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  padding:12px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  z-index:999;
+}
+
+header a{
+  text-decoration:none;
+  color:#333;
+  margin-left:20px;
   font-weight:600;
-}
-.highlight-banner p{
-  margin:8px 0 0;
-  font-size:16px;
-  opacity:0.9;
 }
 
 /* HERO */
 .hero{
-  background:#eaf1ff;padding:60px 0
+  color:#fff;
+  padding:90px 40px;
+  background:
+  linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+  url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+  background-size:cover;
+  background-position:center;
+  text-align:left;
 }
-.hero-flex{
-  display:flex;align-items:center;justify-content:space-between;gap:30px
+
+.hero h1{
+  font-size:42px;
 }
-.hero-text{flex:65%}
-.hero-img{flex:35%}
-.hero-img img{width:100%;border-radius:10px}
+
+.hero p{
+  font-size:18px;
+  margin:15px 0;
+}
+
 .btn{
-  padding:12px 25px;background:#0d6efd;color:#fff;
-  border:none;border-radius:5px;cursor:pointer;margin-top:15px
+  background:#ff6b00;
+  color:#fff;
+  padding:12px 22px;
+  border:none;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.section{padding:60px 0}
-h2{text-align:center;margin-bottom:30px}
-
-/* Tabs */
-.tabs{text-align:center;margin-bottom:20px}
-.tab-btn{
-  padding:10px 20px;margin:5px;border:none;
-  background:#dbe7ff;cursor:pointer;border-radius:5px
+/* TABS */
+.tabs{
+  padding:60px 40px;
 }
-.tab-btn.active{background:#0d6efd;color:#fff}
-.tab-content{display:none;max-width:900px;margin:auto}
-.tab-content.active{display:block}
 
-/* Roadmap */
-.roadmap-flex{
-  display:flex;gap:30px;align-items:center
+.tab-buttons button{
+  padding:10px 20px;
+  margin-right:10px;
+  border:none;
+  cursor:pointer;
+  background:#eee;
+  font-weight:bold;
 }
-.roadmap-img{flex:50%}
-.roadmap-img img{
+
+.tab-content{
+  margin-top:20px;
+  display:none;
+}
+
+.tab-content.active{
+  display:block;
+}
+
+/* ROADMAP */
+.roadmap{
+  padding:60px 40px;
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.roadmap img{
   width:100%;
+  max-width:500px;
   aspect-ratio:2.35/1;
-  object-fit:cover;
-  border-radius:10px
+  border-radius:10px;
 }
-.grid-2{
-  flex:50%;
+
+.grid{
+  flex:1;
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:15px;
 }
-.card{
-  background:#fff;padding:20px;border-radius:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
-  text-align:center
+
+.grid div{
+  background:#f5f5f5;
+  padding:15px;
+  border-radius:8px;
 }
 
-/* FAQ */
-.faq-item{
-  background:#fff;padding:15px;margin-bottom:10px;border-radius:8px
+/* ENQUIRY */
+.enquiry{
+  padding:60px 40px;
+  background:#f9f9f9;
 }
 
-/* Form */
-form{max-width:500px;margin:auto;display:flex;flex-direction:column}
-input,textarea{margin-bottom:10px;padding:10px;border-radius:5px;border:1px solid #ccc}
-
-/* Footer */
-footer{background:#0d6efd;color:#fff;text-align:center;padding:20px;margin-top:40px}
-
-/* WhatsApp */
-.whatsapp{
-  position:fixed;bottom:20px;right:20px;
-  background:#25D366;color:#fff;padding:12px 18px;
-  border-radius:50px;text-decoration:none;font-weight:bold
+.enquiry form{
+  max-width:500px;
 }
 
-/* Mobile */
+.enquiry input, .enquiry textarea{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+/* FOOTER */
+footer{
+  background:#111827;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* MOBILE */
 @media(max-width:768px){
-  .hero-flex, .roadmap-flex{
+  .roadmap{
     flex-direction:column;
   }
-  .grid-2{
+  .grid{
     grid-template-columns:1fr;
   }
 }
 </style>
 
 <script>
-function showTab(id,btn){
-  document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(el=>el.classList.remove('active'));
+function openTab(id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
 }
 </script>
-</head>
 
+</head>
 <body>
 
+<div class="top-banner">
+🚀 Free Demo: Selenium Automation with Java + GenAI | Live Project + Certification
+</div>
+
 <header>
-  <div class="container">
-    <h2>Selenium + GenAI Course</h2>
-    <nav>
-      <a href="#course">Course</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#enquiry">Enquiry</a>
-    </nav>
-  </div>
+  <div><strong>Selenium GenAI Course</strong></div>
+  <nav>
+    <a href="#tabs">Course</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#enquiry">Enquiry</a>
+  </nav>
 </header>
 
-<!-- HIGHLIGHT BANNER -->
-<section class="highlight-banner">
-  <div class="container">
-    <h2>Live Project • Certification • GenAI Integration • Job-Oriented Training</h2>
-    <p>Free Demo Session Available | Weekend & Weekday Batches | USA Time Zone Friendly</p>
-  </div>
-</section>
-
-<!-- HERO -->
 <section class="hero">
-  <div class="container hero-flex">
-    <div class="hero-text">
-      <h1>Selenium Automation with Java + Generative AI</h1>
-      <p>Master automation testing with real-time framework design and GenAI integration.</p>
-      <button class="btn">Book Free Demo</button>
-    </div>
-    <div class="hero-img">
-      <img src="https://via.placeholder.com/500x350" alt="Banner">
-    </div>
+  <h1>Selenium Automation with Java + Generative AI</h1>
+  <p>Master automation testing with real-time framework design and GenAI integration.</p>
+  <a href="#enquiry" class="btn">Book Free Demo</a>
+</section>
+
+<section id="tabs" class="tabs">
+  <div class="tab-buttons">
+    <button onclick="openTab('about')">About Course</button>
+    <button onclick="openTab('curriculum')">Curriculum</button>
+    <button onclick="openTab('description')">Description</button>
+    <button onclick="openTab('faq')">FAQ</button>
+  </div>
+
+  <div id="about" class="tab-content active">
+    <p>This course teaches Selenium Automation with Java integrated with Generative AI for faster test creation and smart debugging.</p>
+  </div>
+
+  <div id="curriculum" class="tab-content">
+    <ul>
+      <li>Java Basics for Automation</li>
+      <li>Selenium WebDriver & Framework Design</li>
+      <li>TestNG, Maven, POM</li>
+      <li>GenAI for Test Case Generation</li>
+      <li>CI/CD Integration</li>
+    </ul>
+  </div>
+
+  <div id="description" class="tab-content">
+    <p>Work on real-time projects and learn how companies build automation frameworks using Selenium and AI tools.</p>
+  </div>
+
+  <div id="faq" class="tab-content">
+    <p><strong>Who can join?</strong> Beginners to testers.</p>
+    <p><strong>Do I need coding?</strong> Basic Java is enough.</p>
   </div>
 </section>
 
-<!-- TABS -->
-<section id="course" class="section">
-  <div class="container">
-    <h2>Course Details</h2>
-
-    <div class="tabs">
-      <button class="tab-btn active" onclick="showTab('about',this)">About</button>
-      <button class="tab-btn" onclick="showTab('curriculum',this)">Curriculum</button>
-      <button class="tab-btn" onclick="showTab('description',this)">Description</button>
-      <button class="tab-btn" onclick="showTab('faqs',this)">FAQs</button>
-    </div>
-
-    <div id="about" class="tab-content active">
-      <p>This course teaches Selenium with Java, Maven, TestNG, framework design, and how GenAI helps in automation testing.</p>
-    </div>
-
-    <div id="curriculum" class="tab-content">
-      <ul>
-        <li>Java for Automation</li>
-        <li>Selenium WebDriver</li>
-        <li>Framework Design</li>
-        <li>Maven & TestNG</li>
-        <li>GenAI in Testing</li>
-        <li>Live Project</li>
-      </ul>
-    </div>
-
-    <div id="description" class="tab-content">
-      <p>Job-oriented training with resume, interview prep, and real-time scenarios.</p>
-    </div>
-
-    <div id="faqs" class="tab-content">
-      <div class="faq-item"><b>Who can join?</b><br>Freshers, testers, developers.</div>
-      <div class="faq-item"><b>Certification?</b><br>Yes, provided.</div>
-      <div class="faq-item"><b>Project?</b><br>Included.</div>
-    </div>
+<section id="roadmap" class="roadmap">
+  <img src="https://dummyimage.com/800x340/cccccc/000000&text=Career+Roadmap+Image" alt="Roadmap">
+  <div class="grid">
+    <div>Java Foundations</div>
+    <div>Selenium WebDriver</div>
+    <div>Framework Design</div>
+    <div>TestNG & Maven</div>
+    <div>GenAI Integration</div>
+    <div>CI/CD & Git</div>
   </div>
 </section>
 
-<!-- ROADMAP -->
-<section id="roadmap" class="section">
-  <div class="container">
-    <h2>Career Roadmap</h2>
-
-    <div class="roadmap-flex">
-      <div class="roadmap-img">
-        <img src="https://via.placeholder.com/900x380" alt="Roadmap">
-      </div>
-
-      <div class="grid-2">
-        <div class="card">Java Basics</div>
-        <div class="card">Selenium WebDriver</div>
-        <div class="card">Locators & Waits</div>
-        <div class="card">Framework Design</div>
-        <div class="card">Maven & TestNG</div>
-        <div class="card">GenAI in Automation</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ENQUIRY -->
-<section id="enquiry" class="section">
-  <div class="container">
-    <h2>Enquiry Form</h2>
-    <form action="https://formsubmit.co/your-email@example.com" method="POST">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message"></textarea>
-      <button class="btn">Submit</button>
-    </form>
-  </div>
+<section id="enquiry" class="enquiry">
+  <h2>Enquiry Form</h2>
+  <form>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Your Message"></textarea>
+    <button class="btn">Submit</button>
+  </form>
 </section>
 
 <footer>
-  © 2026 Selenium + GenAI Training
+© 2026 Selenium GenAI Course | All Rights Reserved
 </footer>
-
-<a class="whatsapp" href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
 
 </body>
 </html>
