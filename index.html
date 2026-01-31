@@ -10,6 +10,7 @@
 body{margin:0;font-family:Poppins;background:#eef3ff;color:#333}
 .container{width:90%;max-width:1200px;margin:auto}
 
+/* HEADER */
 header{
   position:sticky;top:0;background:#0d6efd;color:#fff;
   padding:15px 0;z-index:1000
@@ -19,8 +20,23 @@ header .container{
 }
 nav a{color:#fff;margin-left:20px;text-decoration:none;font-weight:500}
 
-.section{padding:60px 0}
-h2{text-align:center;margin-bottom:30px}
+/* HIGHLIGHT BANNER */
+.highlight-banner{
+  background:#111827;
+  color:#fff;
+  padding:25px 0;
+  text-align:center;
+}
+.highlight-banner h2{
+  margin:0;
+  font-size:26px;
+  font-weight:600;
+}
+.highlight-banner p{
+  margin:8px 0 0;
+  font-size:16px;
+  opacity:0.9;
+}
 
 /* HERO */
 .hero{
@@ -37,6 +53,9 @@ h2{text-align:center;margin-bottom:30px}
   border:none;border-radius:5px;cursor:pointer;margin-top:15px
 }
 
+.section{padding:60px 0}
+h2{text-align:center;margin-bottom:30px}
+
 /* Tabs */
 .tabs{text-align:center;margin-bottom:20px}
 .tab-btn{
@@ -51,9 +70,7 @@ h2{text-align:center;margin-bottom:30px}
 .roadmap-flex{
   display:flex;gap:30px;align-items:center
 }
-.roadmap-img{
-  flex:50%;
-}
+.roadmap-img{flex:50%}
 .roadmap-img img{
   width:100%;
   aspect-ratio:2.35/1;
@@ -125,6 +142,14 @@ function showTab(id,btn){
   </div>
 </header>
 
+<!-- HIGHLIGHT BANNER -->
+<section class="highlight-banner">
+  <div class="container">
+    <h2>Live Project • Certification • GenAI Integration • Job-Oriented Training</h2>
+    <p>Free Demo Session Available | Weekend & Weekday Batches | USA Time Zone Friendly</p>
+  </div>
+</section>
+
 <!-- HERO -->
 <section class="hero">
   <div class="container hero-flex">
@@ -134,7 +159,6 @@ function showTab(id,btn){
       <button class="btn">Book Free Demo</button>
     </div>
     <div class="hero-img">
-      <!-- Replace with your banner image -->
       <img src="https://via.placeholder.com/500x350" alt="Banner">
     </div>
   </div>
@@ -186,7 +210,6 @@ function showTab(id,btn){
 
     <div class="roadmap-flex">
       <div class="roadmap-img">
-        <!-- Replace with your roadmap image (2.35:1) -->
         <img src="https://via.placeholder.com/900x380" alt="Roadmap">
       </div>
 
