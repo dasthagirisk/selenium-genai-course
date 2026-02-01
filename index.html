@@ -247,6 +247,40 @@ form{grid-template-columns:1fr;}
   100%{ transform:translateY(0); }
 }
 
+  .course-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.course-card{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  transition:transform .3s, box-shadow .3s;
+  text-align:center;
+}
+
+.course-card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+}
+
+.course-card h4{
+  padding:16px;
+  font-size:17px;
+  color:#333;
+}
+
+.course-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+
 
 
 
@@ -425,14 +459,42 @@ Become a Job-Ready Automation Engineer with AI Skills
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="testimonials" class="section" style="background:#fafafa;">
-<h2>Student Testimonials</h2>
-<div class="cards">
-<div class="card">"Got job after this course!"</div>
-<div class="card">"Best Selenium + AI training"</div>
-<div class="card">"Live project experience was amazing"</div>
-</div>
+<section id="popular-courses" class="section" style="background:#fafafa;">
+  <h2>Popular Courses</h2>
+
+  <div class="course-grid">
+
+    <div class="course-card">
+      <a href="#">
+        <img src="assets/images/courses/genai-python-online-course.png" alt="">
+        <h4>Generative AI Python Online Course</h4>
+      </a>
+    </div>
+
+    <div class="course-card">
+      <a href="#">
+        <img src="assets/images/courses/MLOps-online-course.png" alt="">
+        <h4>MLOps Online Course</h4>
+      </a>
+    </div>
+
+    <div class="course-card">
+      <a href="#">
+        <img src="assets/images/courses/databricks-online-training.png" alt="">
+        <h4>Databricks Online Course</h4>
+      </a>
+    </div>
+
+    <div class="course-card">
+      <a href="#">
+        <img src="assets/images/courses/data-science-with-python-training.png" alt="">
+        <h4>Data Science Python Online Course</h4>
+      </a>
+    </div>
+
+  </div>
 </section>
+
 
 <!-- FORM -->
 <section id="enroll" class="section form-section">
