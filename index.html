@@ -72,6 +72,94 @@ footer{background:#0d6efd;color:#fff;text-align:center;padding:20px;}
 .cards{flex-direction:column;align-items:center;}
 form{grid-template-columns:1fr;}
 }
+  {
+  font-family:'Poppins',sans-serif;
+  background:#ffffff;
+  margin:0;
+}
+
+.roadmap-section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.roadmap-section h2{
+  font-size:36px;
+  margin-bottom:60px;
+  color:#0d6efd;
+}
+
+.timeline{
+  position:relative;
+  max-width:900px;
+  margin:auto;
+}
+
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:0;
+  width:4px;
+  height:100%;
+  background:#0d6efd;
+  transform:translateX(-50%);
+}
+
+.step{
+  position:relative;
+  width:45%;
+  padding:25px;
+  background:#f8f9fa;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom:60px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+
+.step.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.step.left{left:0;}
+.step.right{left:55%;}
+
+.step::after{
+  content:'';
+  position:absolute;
+  top:25px;
+  width:18px;
+  height:18px;
+  background:#0d6efd;
+  border-radius:50%;
+}
+
+.step.left::after{right:-34px;}
+.step.right::after{left:-34px;}
+
+.icon{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.step h3{
+  margin:10px 0;
+  color:#0d6efd;
+}
+
+@media(max-width:768px){
+  .timeline::before{left:8px;}
+  .step{
+    width:90%;
+    left:20px !important;
+  }
+  .step::after{
+    left:-28px !important;
+  }
+}
 </style>
 </head>
 
@@ -136,6 +224,63 @@ form{grid-template-columns:1fr;}
 <section id="roadmap" class="section">
 <h2>Course Roadmap</h2>
 <img src="roadmap.png" style="width:90%;max-width:850px;">
+  <section class="roadmap-section">
+  <h2>Selenium Automation With Java + Generative AI – Learning Roadmap</h2>
+
+  <div class="timeline">
+
+    <div class="step left">
+      <div class="icon">☕</div>
+      <h3>Java Basics for Automation</h3>
+      <p>OOPs concepts, collections, exceptions and Java foundation for test automation.</p>
+    </div>
+
+    <div class="step right">
+      <div class="icon">🌐</div>
+      <h3>Selenium WebDriver Architecture</h3>
+      <p>Understanding WebDriver, browser drivers, and automation flow.</p>
+    </div>
+
+    <div class="step left">
+      <div class="icon">🎯</div>
+      <h3>Locators, Waits, Actions</h3>
+      <p>Advanced element handling, waits, alerts, frames and user actions.</p>
+    </div>
+
+    <div class="step right">
+      <div class="icon">⚙️</div>
+      <h3>TestNG & Maven Framework</h3>
+      <p>Test structure, annotations, reports and project build management.</p>
+    </div>
+
+    <div class="step left">
+      <div class="icon">🧩</div>
+      <h3>Page Object Model & Data Driven</h3>
+      <p>Framework design using POM and external data sources.</p>
+    </div>
+
+    <div class="step right">
+      <div class="icon">🧠</div>
+      <h3>Generative AI for Test Case Creation</h3>
+      <p>Using AI tools to generate test cases, locators and automation code.</p>
+    </div>
+
+    <div class="step left">
+      <div class="icon">🛒</div>
+      <h3>Live E-Commerce Automation Project</h3>
+      <p>Real-time project covering end-to-end automation scenarios.</p>
+    </div>
+
+    <div class="step right">
+      <div class="icon">🎓</div>
+      <h3>Resume, Interview Prep & Certification</h3>
+      <p>Mock interviews, resume building and course certification.</p>
+    </div>
+
+  </div>
+</section>
+
+
 </section>
 
 <!-- TESTIMONIALS -->
@@ -179,6 +324,21 @@ document.getElementById(btn.dataset.tab).classList.add('active');
 };
 });
 </script>
+
+  <script>
+const steps = document.querySelectorAll('.step');
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+},{threshold:0.2});
+
+steps.forEach(step=>observer.observe(step));
+</script>
+
 
 </body>
 </html>
