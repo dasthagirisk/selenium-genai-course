@@ -281,18 +281,52 @@ form{grid-template-columns:1fr;}
 }
 
 
-.list{
-  max-width:900px;
-  margin:20px auto;
-  text-align:left;
-  line-height:1.8;
-}
-.list li{
-  margin-bottom:8px;
-}
-.bg-light{
+.course-overview{
   background:#f7f9fc;
+  padding:80px 20px;
+  text-align:center;
 }
+
+.overview-text{
+  max-width:900px;
+  margin:15px auto 40px;
+  font-size:17px;
+  line-height:1.7;
+  color:#555;
+}
+
+.overview-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.overview-box{
+  background:#fff;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  text-align:left;
+  transition:transform .3s;
+}
+
+.overview-box:hover{
+  transform:translateY(-6px);
+}
+
+.overview-box h3{
+  margin-bottom:12px;
+  color:#0d6efd;
+}
+
+.overview-box ul{
+  padding-left:18px;
+  line-height:1.8;
+  color:#444;
+}
+
 
 
 
@@ -380,71 +414,65 @@ Become a Job-Ready Automation Engineer with AI Skills
 
 <div id="about" class="tab-content active">
 <h3>About Course</h3>
-<section class="section" id="course-description">
-  <h2>About The Course</h2>
-  <p>
-    <strong>Selenium Automation With Java + Gen AI</strong> is an AI-powered automation testing course designed to help learners master modern web test automation using Selenium WebDriver and Java, enhanced with Generative AI-driven testing techniques.
+<section class="section course-overview" id="course-overview">
+  <h2>Selenium Automation With Java + Generative AI</h2>
+
+  <p class="overview-text">
+    An AI-powered, job-oriented automation testing program to master Selenium WebDriver with Java,
+    build modern frameworks, and apply Generative AI for smart test creation, maintenance, and optimization.
   </p>
-  <p>
-    This course focuses on building intelligent, scalable, and self-healing automation frameworks aligned with current industry standards. Learners gain real-time project exposure, AI-assisted test optimization, smart test maintenance, automated defect analysis, and modern QA best practices.
-  </p>
-  <p>
-    This job-oriented Selenium certification course includes placement support and hands-on learning to confidently handle real-world automation challenges in enterprise environments.
-  </p>
-</section>
-<section class="section bg-light">
-  <h2>What You’ll Learn</h2>
-  <ul class="list">
-    <li>Cross-browser testing and Selenium Grid execution</li>
-    <li>Framework design: Hybrid, Data-Driven, and Cucumber</li>
-    <li>AI integration for smart test case generation and maintenance</li>
-    <li>Real-time automation project implementation</li>
-    <li>Setup and configuration of Selenium WebDriver for multiple browsers</li>
-    <li>Cost-effective automation compared to licensed tools</li>
-    <li>Industry-demanded Selenium automation skills</li>
-  </ul>
-</section>
-<section class="section">
-  <h2>Job Opportunities After This Course</h2>
-  <div class="cards">
-    <div class="card">Automation QA Tester</div>
-    <div class="card">Selenium Test Engineer</div>
-    <div class="card">QA Automation Engineer</div>
-    <div class="card">Selenium Automation Tester</div>
-    <div class="card">Selenium Framework Developer</div>
-    <div class="card">Software Development Engineer in Test (SDET)</div>
+
+  <div class="overview-grid">
+
+    <div class="overview-box">
+      <h3>What You’ll Learn</h3>
+      <ul>
+        <li>Selenium WebDriver, Locators, Waits</li>
+        <li>TestNG, Maven, POM Framework</li>
+        <li>Hybrid & Data-Driven Frameworks</li>
+        <li>GenAI for Test Case Creation</li>
+        <li>Live E-Commerce Automation Project</li>
+      </ul>
+    </div>
+
+    <div class="overview-box">
+      <h3>Who Can Join</h3>
+      <ul>
+        <li>Freshers & Students</li>
+        <li>Manual Testers → Automation</li>
+        <li>Non-IT learners with basics</li>
+        <li>QA / Developers upskilling</li>
+      </ul>
+    </div>
+
+    <div class="overview-box">
+      <h3>Career Roles</h3>
+      <ul>
+        <li>Automation QA Tester</li>
+        <li>Selenium Test Engineer</li>
+        <li>QA Automation Engineer</li>
+        <li>SDET / Framework Developer</li>
+      </ul>
+    </div>
+
+    <div class="overview-box">
+      <h3>What You Get</h3>
+      <ul>
+        <li>Certification + Live Project</li>
+        <li>Resume & Interview Support</li>
+        <li>Class Recordings & Notes</li>
+        <li>Job Placement Assistance</li>
+      </ul>
+    </div>
+
   </div>
 </section>
-<section class="section bg-light">
-  <h2>Who Can Join</h2>
-  <ul class="list">
-    <li>Freshers who are just out of college</li>
-    <li>Non-technical learners with willingness to learn</li>
-    <li>Manual testers looking to switch to Automation Testing</li>
-    <li>Developers/Testers who want to upskill in AI-powered automation</li>
-  </ul>
-</section>
-<section class="section">
-  <h2>Material Includes</h2>
-  <ul class="list">
-    <li>Class recordings</li>
-    <li>Sample resumes</li>
-    <li>PPTs and class notes</li>
-    <li>Interview questions and answers</li>
-    <li>PDF/Word notes and diagrams</li>
-  </ul>
-</section>
-<section class="section bg-light">
-  <h2>Course Benefits</h2>
-  <div class="cards">
-    <div class="card">Job Placement Support</div>
-    <div class="card">Flexible Timings</div>
-    <div class="card">Lifetime Video Access</div>
-    <div class="card">Course Certification</div>
-    <div class="card">Resume Preparation</div>
-    <div class="card">Mock Interviews</div>
-  </div>
-</section>
+
+
+
+
+
+
 
 
 </div>
