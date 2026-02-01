@@ -12,7 +12,7 @@ body{
   background:#f3f4f6;
 }
 
-/* BOXED LAYOUT */
+/* WRAPPER */
 .wrapper{
   max-width:1200px;
   margin:auto;
@@ -48,30 +48,21 @@ header a{
   font-weight:600;
 }
 
-/* HERO 65 / 35 */
+/* HERO */
 .hero{
   display:flex;
   align-items:center;
   padding:70px 40px;
   gap:30px;
 }
-.hero-left{
-  flex:0 0 65%;
-}
-.hero-right{
-  flex:0 0 35%;
-}
+.hero-left{flex:65%;}
+.hero-right{flex:35%;}
 .hero-right img{
   width:100%;
   border-radius:10px;
 }
-.hero h1{
-  font-size:38px;
-}
-.hero p{
-  font-size:18px;
-  margin:15px 0;
-}
+.hero h1{font-size:38px;}
+.hero p{font-size:18px;margin:15px 0;}
 .btn{
   background:#ff6b00;
   color:#fff;
@@ -81,10 +72,16 @@ header a{
   font-weight:bold;
 }
 
-/* TABS */
-.tabs{
+/* COURSE + ROADMAP COMBINED */
+.course-section{
+  display:flex;
+  gap:40px;
   padding:60px 40px;
 }
+.left-tabs{flex:65%;}
+.right-roadmap{flex:35%;}
+
+/* TABS */
 .tab-buttons button{
   padding:10px 20px;
   margin-right:10px;
@@ -102,27 +99,22 @@ header a{
 }
 
 /* ROADMAP */
-.roadmap{
-  padding:60px 40px;
-  display:flex;
-  gap:40px;
-}
-.roadmap img{
+.right-roadmap img{
   width:100%;
-  max-width:500px;
   aspect-ratio:2.35/1;
   border-radius:10px;
+  margin-bottom:20px;
 }
 .grid{
-  flex:1;
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:15px;
+  gap:12px;
 }
 .grid div{
   background:#f3f4f6;
-  padding:15px;
+  padding:12px;
   border-radius:8px;
+  font-size:14px;
 }
 
 /* ENQUIRY */
@@ -145,15 +137,13 @@ footer{
 }
 
 /* MOBILE */
-@media(max-width:768px){
-  .hero{
+@media(max-width:900px){
+  .hero, .course-section{
     flex-direction:column;
   }
-  .hero-left, .hero-right{
+  .hero-left, .hero-right,
+  .left-tabs, .right-roadmap{
     flex:100%;
-  }
-  .roadmap{
-    flex-direction:column;
   }
   .grid{
     grid-template-columns:1fr;
@@ -180,8 +170,7 @@ function openTab(id){
 <header>
   <div><strong>Selenium GenAI Course</strong></div>
   <nav>
-    <a href="#tabs">Course</a>
-    <a href="#roadmap">Roadmap</a>
+    <a href="#course">Course</a>
     <a href="#enquiry">Enquiry</a>
   </nav>
 </header>
@@ -198,50 +187,55 @@ function openTab(id){
   </div>
 </section>
 
-<!-- TABS -->
-<section id="tabs" class="tabs">
-  <div class="tab-buttons">
-    <button onclick="openTab('about')">About Course</button>
-    <button onclick="openTab('curriculum')">Curriculum</button>
-    <button onclick="openTab('description')">Description</button>
-    <button onclick="openTab('faq')">FAQ</button>
+<!-- COURSE + ROADMAP -->
+<section id="course" class="course-section">
+
+  <!-- LEFT TABS -->
+  <div class="left-tabs">
+    <div class="tab-buttons">
+      <button onclick="openTab('about')">About Course</button>
+      <button onclick="openTab('curriculum')">Course Curriculum</button>
+      <button onclick="openTab('description')">Description</button>
+      <button onclick="openTab('faq')">FAQ's</button>
+    </div>
+
+    <div id="about" class="tab-content active">
+      <p>This course teaches Selenium Automation with Java integrated with Generative AI for smart test creation, debugging, and real-time framework design used in companies.</p>
+    </div>
+
+    <div id="curriculum" class="tab-content">
+      <ul>
+        <li>Java for Automation</li>
+        <li>Selenium WebDriver</li>
+        <li>Framework Design (POM, TestNG, Maven)</li>
+        <li>GenAI for Test Case Creation</li>
+        <li>CI/CD, Git Integration</li>
+      </ul>
+    </div>
+
+    <div id="description" class="tab-content">
+      <p>Hands-on live project where you build a real Selenium framework and integrate GenAI to speed up automation activities.</p>
+    </div>
+
+    <div id="faq" class="tab-content">
+      <p><strong>Who can join?</strong> Beginners, testers, and developers.</p>
+      <p><strong>Is Java mandatory?</strong> Basic knowledge is enough.</p>
+    </div>
   </div>
 
-  <div id="about" class="tab-content active">
-    <p>This course teaches Selenium Automation with Java integrated with Generative AI for smart test creation and debugging.</p>
+  <!-- RIGHT ROADMAP -->
+  <div class="right-roadmap">
+    <img src="https://dummyimage.com/800x340/cccccc/000000&text=Career+Roadmap" alt="Roadmap">
+    <div class="grid">
+      <div>Java Foundations</div>
+      <div>Selenium WebDriver</div>
+      <div>Framework Design</div>
+      <div>TestNG & Maven</div>
+      <div>GenAI Integration</div>
+      <div>CI/CD & Git</div>
+    </div>
   </div>
 
-  <div id="curriculum" class="tab-content">
-    <ul>
-      <li>Java for Automation</li>
-      <li>Selenium WebDriver</li>
-      <li>Framework Design (POM, TestNG, Maven)</li>
-      <li>GenAI for Test Cases</li>
-      <li>CI/CD Integration</li>
-    </ul>
-  </div>
-
-  <div id="description" class="tab-content">
-    <p>Hands-on live project with real framework design used in companies.</p>
-  </div>
-
-  <div id="faq" class="tab-content">
-    <p><strong>Who can join?</strong> Beginners and testers.</p>
-    <p><strong>Is coding needed?</strong> Basic Java is enough.</p>
-  </div>
-</section>
-
-<!-- ROADMAP -->
-<section id="roadmap" class="roadmap">
-  <img src="https://dummyimage.com/800x340/cccccc/000000&text=Career+Roadmap" alt="Roadmap">
-  <div class="grid">
-    <div>Java Foundations</div>
-    <div>Selenium WebDriver</div>
-    <div>Framework Design</div>
-    <div>TestNG & Maven</div>
-    <div>GenAI Integration</div>
-    <div>CI/CD & Git</div>
-  </div>
 </section>
 
 <!-- ENQUIRY -->
