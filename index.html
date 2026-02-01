@@ -3,200 +3,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Selenium Automation with Java + GenAI</title>
+<title>Selenium Automation with GenAI | Certification + Live Project</title>
 
-<!-- STYLES -->
+<meta name="description" content="Master Selenium Automation with Java and Generative AI. Live projects, certification, and job-oriented training."/>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif;}
-body{background:#eef2f7;color:#111;}
-.container{max-width:1200px;margin:auto;background:#fff;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
-
-/* TOP BANNER */
-.top-banner{background:#111827;color:#fff;text-align:center;padding:10px;font-size:14px;}
-
-/* NAV */
-header{position:sticky;top:0;background:#fff;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 8px rgba(0,0,0,0.08);}
-header a{margin-left:20px;color:#111;text-decoration:none;font-weight:600;}
-
-/* HERO */
-.hero{display:flex;align-items:center;gap:30px;padding:60px 40px;}
-.hero-left{flex:0 0 65%;}
-.hero-right{flex:0 0 35%;}
-.hero-right img{width:100%;border-radius:12px;}
-.hero h1{font-size:40px;color:#0d2438;}
-.hero p{margin-top:15px;font-size:18px;}
-.btn{background:#ff6b00;color:#fff;padding:12px 25px;border:none;border-radius:6px;font-weight:600;text-decoration:none;display:inline-block;margin-top:15px;}
-
-/* SECTION TITLES */
-.section{padding:60px 40px;}
-.section h2{text-align:center;margin-bottom:30px;font-size:28px;color:#0d2438;}
-
-/* TWO COLUMN */
-.two-col{display:flex;gap:40px;}
-.two-col .left{flex:65%;}
-.two-col .right{flex:35%;}
-
-/* LISTS */
-ul{list-style:disc;margin-left:20px;margin-top:10px;}
-
-/* GRID POINTS */
-.points{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.points div{background:#f8fafc;padding:10px;border-radius:6px;font-size:14px;}
-
-/* FAQ */
-.faq-item{margin-bottom:15px;padding:12px;border:1px solid #ddd;border-radius:8px;}
-
-/* FORM */
-.enquiry-form input, .enquiry-form textarea{
-  width:100%;padding:10px;margin-bottom:12px;border:1px solid #ccc;border-radius:5px;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{scroll-behavior:smooth;background:#fff;color:#333;}
+header{
+  position:sticky;top:0;background:#0d6efd;color:#fff;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:15px 40px;z-index:999;
 }
-.footer{text-align:center;padding:20px;background:#0d2438;color:#fff;font-size:14px;}
-
-/* MOBILE */
-@media(max-width:900px){
-  .hero, .two-col{flex-direction:column;}
-  .points{grid-template-columns:1fr;}
+header nav a{
+  color:#fff;margin:0 12px;text-decoration:none;font-weight:500;
+}
+.hero{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url('https://images.unsplash.com/photo-1581090700227-1e8e7b6c6a8e');
+  background-size:cover;background-position:center;
+  color:#fff;text-align:center;padding:110px 20px;
+}
+.hero h1{font-size:42px;margin-bottom:10px;}
+.btn{
+  background:#ffc107;color:#000;padding:12px 25px;border:none;
+  border-radius:5px;font-weight:600;cursor:pointer;margin-top:20px;
+}
+.section{padding:70px 20px;text-align:center;}
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
+.card{
+  width:280px;background:#fff;padding:22px;border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  transition:transform .3s, box-shadow .3s;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+.form-section{background:#f4f6f8;}
+form{
+  max-width:800px;margin:auto;display:grid;
+  grid-template-columns:1fr 1fr;gap:15px;
+}
+form input,form select,form textarea{
+  padding:12px;border:1px solid #ccc;border-radius:5px;width:100%;
+}
+form textarea{grid-column:span 2;}
+form button{
+  grid-column:span 2;background:#0d6efd;color:#fff;
+  padding:14px;border:none;border-radius:5px;font-size:16px;
+}
+.faq{max-width:900px;margin:auto;text-align:left;}
+.faq h4{background:#0d6efd;color:#fff;padding:10px;margin-top:10px;}
+.whatsapp{
+  position:fixed;bottom:20px;right:20px;
+}
+.whatsapp img{width:60px;}
+footer{
+  background:#0d6efd;color:#fff;text-align:center;padding:20px;
+}
+@media(max-width:768px){
+  .cards{flex-direction:column;align-items:center;}
+  form{grid-template-columns:1fr;}
+  form textarea,form button{grid-column:span 1;}
 }
 </style>
-
 </head>
+
 <body>
 
-<div class="container">
+<header>
+  <div><strong>Selenium GenAI Course</strong></div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="#enroll">Enroll</a>
+  </nav>
+</header>
 
-  <!-- TOP OFFER -->
-  <div class="top-banner">
-    🚀 Free Demo Session Available | Live Project | Certification | USA Timings
+<section class="hero">
+  <h1>Selenium Automation With Java + Generative AI</h1>
+  <p>Certification • Live Project • Job-Oriented Training</p>
+  <a href="#enroll"><button class="btn">Enroll Now</button></a>
+</section>
+
+<!-- Feature Highlight -->
+<section class="section">
+  <h2>Why This Course Landing Page is Powerful</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>🎯 Premium UI Design</h3>
+      <p>Inspired by top training platforms for maximum trust and conversions.</p>
+    </div>
+    <div class="card">
+      <h3>✨ Animated Experience</h3>
+      <p>Smooth scroll animations and modern interactive feel.</p>
+    </div>
+    <div class="card">
+      <h3>📩 Working Enquiry Form</h3>
+      <p>Backend integrated form that sends leads directly to your email.</p>
+    </div>
   </div>
+</section>
 
-  <!-- HEADER -->
-  <header>
-    <div><strong>Selenium + GenAI Course</strong></div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#whatlearn">What You'll Learn</a>
-      <a href="#curriculum">Curriculum</a>
-      <a href="#faq">FAQ</a>
-      <a href="#enroll">Enroll</a>
-    </div>
-  </header>
+<section id="about" class="section">
+  <h2>What You Will Learn</h2>
+  <div class="cards">
+    <div class="card">Selenium WebDriver with Java</div>
+    <div class="card">TestNG, Maven, Framework Design</div>
+    <div class="card">GenAI Integration in Automation</div>
+    <div class="card">Real-Time Live Project</div>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <h1>Selenium Automation with Java + Generative AI</h1>
-      <p>Master Selenium WebDriver, GenAI-powered test creation, framework design, CI/CD integration and get industry ready for Automation roles.</p>
-      <a href="#enroll" class="btn">Book Free Demo</a>
-    </div>
-    <div class="hero-right">
-      <img src="https://dummyimage.com/500x350/cccccc/000000&text=Selenium+GenAI+Course" alt="Selenium GenAI">
-    </div>
-  </section>
+<section id="roadmap" class="section">
+  <h2>Course Roadmap</h2>
+  <img src="roadmap.png" alt="Roadmap" style="width:90%;max-width:850px;">
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2>About the Course</h2>
-    <p>This online training covers Selenium Automation Testing with Java, integrated with GenAI tools to accelerate test authoring, debugging, and framework development. Ideal for Manual Testers, QA Engineers, and Developers wanting to build enterprise-grade automation systems.</p>
-  </section>
+<section id="testimonials" class="section" style="background:#fafafa;">
+  <h2>Student Testimonials</h2>
+  <div class="cards">
+    <div class="card">"Got job after this course!"</div>
+    <div class="card">"Best Selenium + AI training"</div>
+    <div class="card">"Live project experience was amazing"</div>
+  </div>
+</section>
 
-  <!-- WHAT YOU'LL LEARN -->
-  <section id="whatlearn" class="section">
-    <h2>What You’ll Learn</h2>
-    <div class="points">
-      <div>Selenium WebDriver from Basics to Advanced</div>
-      <div>Page Object Model & Framework Design</div>
-      <div>Generative AI Integration for Test Cases</div>
-      <div>TestNG, Maven, Reporting</div>
-      <div>CI/CD with Jenkins & GitHub Actions</div>
-      <div>Real Automation Projects</div>
-    </div>
-  </section>
+<section id="enroll" class="section form-section">
+  <h2>Enroll / Enquiry Form</h2>
 
-  <!-- COURSE + ROADMAP -->
-  <section class="section">
-    <h2 id="curriculum">Course Curriculum</h2>
-    <div class="two-col">
+  <!-- Replace action URL with your Formspree link -->
+  <form action="https://formspree.io/f/abcdxyz" method="POST">
 
-      <!-- LEFT TABS -->
-      <div class="left">
-        <div class="tab-buttons">
-          <button onclick="showTab('tab1')">Overview</button>
-          <button onclick="showTab('tab2')">Modules</button>
-          <button onclick="showTab('tab3')">Resources</button>
-        </div>
+    <input type="text" name="Full Name" placeholder="Full Name" required>
+    <input type="email" name="Email" placeholder="Email" required>
+    <input type="tel" name="Phone" placeholder="Phone / WhatsApp Number" required>
 
-        <div id="tab1" class="tab-content active">
-          <ul>
-            <li>Introduction to Automation & Selenium</li>
-            <li>Java Fundamentals for Automation</li>
-            <li>Selenium WebDriver and Browser Control</li>
-            <li>GenAI Tools in Testing (GPT, Image Recognition)</li>
-          </ul>
-        </div>
+    <select name="Current Role" required>
+      <option value="">Current Role</option>
+      <option>Student</option>
+      <option>Tester</option>
+      <option>Developer</option>
+      <option>Fresher</option>
+    </select>
 
-        <div id="tab2" class="tab-content">
-          <ul>
-            <li>Locators, Synchronization, Waits</li>
-            <li>TestNG, Framework Architecture</li>
-            <li>CI/CD Pipeline Integration</li>
-            <li>Live Projects & Real Scenarios</li>
-          </ul>
-        </div>
+    <select name="Experience" required>
+      <option value="">Experience Level</option>
+      <option>0-1 Years</option>
+      <option>1-3 Years</option>
+      <option>3+ Years</option>
+    </select>
 
-        <div id="tab3" class="tab-content">
-          <ul>
-            <li>Lecture Notes & Slides</li>
-            <li>Sample Test Scripts</li>
-            <li>Real-World Case Studies</li>
-            <li>Interview Questions</li>
-          </ul>
-        </div>
-      </div>
+    <select name="Batch Time" required>
+      <option value="">Preferred Batch Time</option>
+      <option>Morning</option>
+      <option>Evening</option>
+      <option>Weekend</option>
+    </select>
 
-      <!-- RIGHT ROADMAP -->
-      <div class="right">
-        <img src="https://dummyimage.com/800x340/cccccc/000000&text=Career+Roadmap" alt="Career Roadmap">
-        <div class="points">
-          <div>Automation Engineer</div>
-          <div>SDET (Software Dev Engineer in Test)</div>
-          <div>QA Test Lead</div>
-          <div>CI/CD Automation Specialist</div>
-          <div>DevOps + Test Integrator</div>
-          <div>Test Architect</div>
-        </div>
-      </div>
+    <select name="Learning Goal" required>
+      <option value="">Learning Goal</option>
+      <option>Get Job</option>
+      <option>Upskill</option>
+      <option>Switch Career</option>
+      <option>Certification</option>
+    </select>
 
-    </div>
-  </section>
+    <textarea name="Message" rows="4" placeholder="Your Message"></textarea>
 
-  <!-- FAQ -->
-  <section id="faq" class="section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item"><strong>Do I need coding experience?</strong> No, basic Java is enough to start.</div>
-    <div class="faq-item"><strong>Is certification provided?</strong> Yes, certification upon completion.</div>
-    <div class="faq-item"><strong>Are there real projects?</strong> Yes, multiple real scenarios included.</div>
-  </section>
+    <button type="submit">Submit Enquiry</button>
+  </form>
+</section>
 
-  <!-- ENROLL -->
-  <section id="enroll" class="section">
-    <h2>Enroll Now</h2>
-    <p>Secure your seat for the next batch.</p>
-    <form action="#" class="enquiry-form">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="text" placeholder="Phone (Optional)">
-      <button class="btn">Submit</button>
-    </form>
-  </section>
+<section id="faq" class="section faq">
+  <h2>FAQs</h2>
+  <h4>Do I need coding knowledge?</h4>
+  <p>Basic Java knowledge is enough to start.</p>
+  <h4>Will I receive a certificate?</h4>
+  <p>Yes, after successful completion of the course.</p>
+</section>
 
-  <footer class="footer">© 2026 Selenium Automation with Java + GenAI Training</footer>
+<a class="whatsapp" href="https://wa.me/17324852499" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
 
-</div>
+<footer>
+  © 2026 Selenium GenAI Course | Contact: +1 732-485-2499
+</footer>
 
 <script>
-function showTab(id){
-  document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+const cards=document.querySelectorAll('.card');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity=1;
+      entry.target.style.transform="translateY(0)";
+    }
+  });
+},{threshold:0.1});
+cards.forEach(card=>{
+  card.style.opacity=0;
+  card.style.transform="translateY(40px)";
+  observer.observe(card);
+});
+</script>
+
+<!-- SEO Schema -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Course",
+"name": "Selenium Automation with Java and GenAI",
+"description": "Learn Selenium with Java and Generative AI integration with live projects and certification.",
+"provider": {
+  "@type": "Organization",
+  "name": "Your Institute Name"
+}
 }
 </script>
 
