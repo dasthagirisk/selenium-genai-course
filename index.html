@@ -5,253 +5,200 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Selenium Automation with Java + GenAI</title>
 
+<!-- STYLES -->
 <style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f3f4f6;
-}
-
-/* WRAPPER */
-.wrapper{
-  max-width:1200px;
-  margin:auto;
-  background:#fff;
-  box-shadow:0 0 15px rgba(0,0,0,0.1);
-}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',sans-serif;}
+body{background:#eef2f7;color:#111;}
+.container{max-width:1200px;margin:auto;background:#fff;box-shadow:0 4px 15px rgba(0,0,0,0.1);}
 
 /* TOP BANNER */
-.top-banner{
-  background:#111827;
-  color:#fff;
-  text-align:center;
-  padding:8px;
-  font-size:14px;
-}
+.top-banner{background:#111827;color:#fff;text-align:center;padding:10px;font-size:14px;}
 
-/* NAVBAR */
-header{
-  position:sticky;
-  top:0;
-  background:#fff;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 2px 5px rgba(0,0,0,0.1);
-  z-index:999;
-}
-header a{
-  text-decoration:none;
-  margin-left:20px;
-  color:#333;
-  font-weight:600;
-}
+/* NAV */
+header{position:sticky;top:0;background:#fff;padding:15px 40px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 8px rgba(0,0,0,0.08);}
+header a{margin-left:20px;color:#111;text-decoration:none;font-weight:600;}
 
 /* HERO */
-.hero{
-  display:flex;
-  align-items:center;
-  padding:70px 40px;
-  gap:30px;
-}
-.hero-left{flex:65%;}
-.hero-right{flex:35%;}
-.hero-right img{
-  width:100%;
-  border-radius:10px;
-}
-.hero h1{font-size:38px;}
-.hero p{font-size:18px;margin:15px 0;}
-.btn{
-  background:#ff6b00;
-  color:#fff;
-  padding:12px 22px;
-  text-decoration:none;
-  border-radius:5px;
-  font-weight:bold;
-}
+.hero{display:flex;align-items:center;gap:30px;padding:60px 40px;}
+.hero-left{flex:0 0 65%;}
+.hero-right{flex:0 0 35%;}
+.hero-right img{width:100%;border-radius:12px;}
+.hero h1{font-size:40px;color:#0d2438;}
+.hero p{margin-top:15px;font-size:18px;}
+.btn{background:#ff6b00;color:#fff;padding:12px 25px;border:none;border-radius:6px;font-weight:600;text-decoration:none;display:inline-block;margin-top:15px;}
 
-/* COURSE + ROADMAP COMBINED */
-.course-section{
-  display:flex;
-  gap:40px;
-  padding:60px 40px;
-}
-.left-tabs{flex:65%;}
-.right-roadmap{flex:35%;}
+/* SECTION TITLES */
+.section{padding:60px 40px;}
+.section h2{text-align:center;margin-bottom:30px;font-size:28px;color:#0d2438;}
 
-/* TABS */
-.tab-buttons button{
-  padding:10px 20px;
-  margin-right:10px;
-  border:none;
-  cursor:pointer;
-  background:#eee;
-  font-weight:bold;
-}
-.tab-content{
-  display:none;
-  margin-top:20px;
-}
-.tab-content.active{
-  display:block;
-}
+/* TWO COLUMN */
+.two-col{display:flex;gap:40px;}
+.two-col .left{flex:65%;}
+.two-col .right{flex:35%;}
 
-/* ROADMAP */
-.right-roadmap img{
-  width:100%;
-  aspect-ratio:2.35/1;
-  border-radius:10px;
-  margin-bottom:20px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-.grid div{
-  background:#f3f4f6;
-  padding:12px;
-  border-radius:8px;
-  font-size:14px;
-}
+/* LISTS */
+ul{list-style:disc;margin-left:20px;margin-top:10px;}
 
-/* ENQUIRY */
-.enquiry{
-  padding:60px 40px;
-  background:#f9f9f9;
-}
-.enquiry input, .enquiry textarea{
-  width:100%;
-  padding:10px;
-  margin-bottom:10px;
-}
+/* GRID POINTS */
+.points{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.points div{background:#f8fafc;padding:10px;border-radius:6px;font-size:14px;}
 
-/* FOOTER */
-footer{
-  background:#111827;
-  color:#fff;
-  text-align:center;
-  padding:20px;
+/* FAQ */
+.faq-item{margin-bottom:15px;padding:12px;border:1px solid #ddd;border-radius:8px;}
+
+/* FORM */
+.enquiry-form input, .enquiry-form textarea{
+  width:100%;padding:10px;margin-bottom:12px;border:1px solid #ccc;border-radius:5px;
 }
+.footer{text-align:center;padding:20px;background:#0d2438;color:#fff;font-size:14px;}
 
 /* MOBILE */
 @media(max-width:900px){
-  .hero, .course-section{
-    flex-direction:column;
-  }
-  .hero-left, .hero-right,
-  .left-tabs, .right-roadmap{
-    flex:100%;
-  }
-  .grid{
-    grid-template-columns:1fr;
-  }
+  .hero, .two-col{flex-direction:column;}
+  .points{grid-template-columns:1fr;}
 }
 </style>
-
-<script>
-function openTab(id){
-  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-</script>
 
 </head>
 <body>
 
-<div class="wrapper">
+<div class="container">
 
-<div class="top-banner">
-🚀 Free Demo: Selenium Automation with Java + GenAI | Live Project + Certification
+  <!-- TOP OFFER -->
+  <div class="top-banner">
+    🚀 Free Demo Session Available | Live Project | Certification | USA Timings
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div><strong>Selenium + GenAI Course</strong></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#whatlearn">What You'll Learn</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#faq">FAQ</a>
+      <a href="#enroll">Enroll</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Selenium Automation with Java + Generative AI</h1>
+      <p>Master Selenium WebDriver, GenAI-powered test creation, framework design, CI/CD integration and get industry ready for Automation roles.</p>
+      <a href="#enroll" class="btn">Book Free Demo</a>
+    </div>
+    <div class="hero-right">
+      <img src="https://dummyimage.com/500x350/cccccc/000000&text=Selenium+GenAI+Course" alt="Selenium GenAI">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About the Course</h2>
+    <p>This online training covers Selenium Automation Testing with Java, integrated with GenAI tools to accelerate test authoring, debugging, and framework development. Ideal for Manual Testers, QA Engineers, and Developers wanting to build enterprise-grade automation systems.</p>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section id="whatlearn" class="section">
+    <h2>What You’ll Learn</h2>
+    <div class="points">
+      <div>Selenium WebDriver from Basics to Advanced</div>
+      <div>Page Object Model & Framework Design</div>
+      <div>Generative AI Integration for Test Cases</div>
+      <div>TestNG, Maven, Reporting</div>
+      <div>CI/CD with Jenkins & GitHub Actions</div>
+      <div>Real Automation Projects</div>
+    </div>
+  </section>
+
+  <!-- COURSE + ROADMAP -->
+  <section class="section">
+    <h2 id="curriculum">Course Curriculum</h2>
+    <div class="two-col">
+
+      <!-- LEFT TABS -->
+      <div class="left">
+        <div class="tab-buttons">
+          <button onclick="showTab('tab1')">Overview</button>
+          <button onclick="showTab('tab2')">Modules</button>
+          <button onclick="showTab('tab3')">Resources</button>
+        </div>
+
+        <div id="tab1" class="tab-content active">
+          <ul>
+            <li>Introduction to Automation & Selenium</li>
+            <li>Java Fundamentals for Automation</li>
+            <li>Selenium WebDriver and Browser Control</li>
+            <li>GenAI Tools in Testing (GPT, Image Recognition)</li>
+          </ul>
+        </div>
+
+        <div id="tab2" class="tab-content">
+          <ul>
+            <li>Locators, Synchronization, Waits</li>
+            <li>TestNG, Framework Architecture</li>
+            <li>CI/CD Pipeline Integration</li>
+            <li>Live Projects & Real Scenarios</li>
+          </ul>
+        </div>
+
+        <div id="tab3" class="tab-content">
+          <ul>
+            <li>Lecture Notes & Slides</li>
+            <li>Sample Test Scripts</li>
+            <li>Real-World Case Studies</li>
+            <li>Interview Questions</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT ROADMAP -->
+      <div class="right">
+        <img src="https://dummyimage.com/800x340/cccccc/000000&text=Career+Roadmap" alt="Career Roadmap">
+        <div class="points">
+          <div>Automation Engineer</div>
+          <div>SDET (Software Dev Engineer in Test)</div>
+          <div>QA Test Lead</div>
+          <div>CI/CD Automation Specialist</div>
+          <div>DevOps + Test Integrator</div>
+          <div>Test Architect</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><strong>Do I need coding experience?</strong> No, basic Java is enough to start.</div>
+    <div class="faq-item"><strong>Is certification provided?</strong> Yes, certification upon completion.</div>
+    <div class="faq-item"><strong>Are there real projects?</strong> Yes, multiple real scenarios included.</div>
+  </section>
+
+  <!-- ENROLL -->
+  <section id="enroll" class="section">
+    <h2>Enroll Now</h2>
+    <p>Secure your seat for the next batch.</p>
+    <form action="#" class="enquiry-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="Phone (Optional)">
+      <button class="btn">Submit</button>
+    </form>
+  </section>
+
+  <footer class="footer">© 2026 Selenium Automation with Java + GenAI Training</footer>
+
 </div>
 
-<header>
-  <div><strong>Selenium GenAI Course</strong></div>
-  <nav>
-    <a href="#course">Course</a>
-    <a href="#enquiry">Enquiry</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <h1>Selenium Automation with Java + Generative AI</h1>
-    <p>Master automation testing with real-time framework design and GenAI integration.</p>
-    <a href="#enquiry" class="btn">Book Free Demo</a>
-  </div>
-  <div class="hero-right">
-    <img src="https://dummyimage.com/500x350/cccccc/000000&text=Selenium+GenAI+Course" alt="Course Image">
-  </div>
-</section>
-
-<!-- COURSE + ROADMAP -->
-<section id="course" class="course-section">
-
-  <!-- LEFT TABS -->
-  <div class="left-tabs">
-    <div class="tab-buttons">
-      <button onclick="openTab('about')">About Course</button>
-      <button onclick="openTab('curriculum')">Course Curriculum</button>
-      <button onclick="openTab('description')">Description</button>
-      <button onclick="openTab('faq')">FAQ's</button>
-    </div>
-
-    <div id="about" class="tab-content active">
-      <p>This course teaches Selenium Automation with Java integrated with Generative AI for smart test creation, debugging, and real-time framework design used in companies.</p>
-    </div>
-
-    <div id="curriculum" class="tab-content">
-      <ul>
-        <li>Java for Automation</li>
-        <li>Selenium WebDriver</li>
-        <li>Framework Design (POM, TestNG, Maven)</li>
-        <li>GenAI for Test Case Creation</li>
-        <li>CI/CD, Git Integration</li>
-      </ul>
-    </div>
-
-    <div id="description" class="tab-content">
-      <p>Hands-on live project where you build a real Selenium framework and integrate GenAI to speed up automation activities.</p>
-    </div>
-
-    <div id="faq" class="tab-content">
-      <p><strong>Who can join?</strong> Beginners, testers, and developers.</p>
-      <p><strong>Is Java mandatory?</strong> Basic knowledge is enough.</p>
-    </div>
-  </div>
-
-  <!-- RIGHT ROADMAP -->
-  <div class="right-roadmap">
-    <img src="https://dummyimage.com/800x340/cccccc/000000&text=Career+Roadmap" alt="Roadmap">
-    <div class="grid">
-      <div>Java Foundations</div>
-      <div>Selenium WebDriver</div>
-      <div>Framework Design</div>
-      <div>TestNG & Maven</div>
-      <div>GenAI Integration</div>
-      <div>CI/CD & Git</div>
-    </div>
-  </div>
-
-</section>
-
-<!-- ENQUIRY -->
-<section id="enquiry" class="enquiry">
-  <h2>Enquiry Form</h2>
-  <input type="text" placeholder="Your Name">
-  <input type="email" placeholder="Your Email">
-  <textarea placeholder="Your Message"></textarea>
-  <button class="btn">Submit</button>
-</section>
-
-<footer>
-© 2026 Selenium GenAI Course | All Rights Reserved
-</footer>
-
-</div>
+<script>
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(el=>el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
