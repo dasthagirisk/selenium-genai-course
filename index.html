@@ -4,71 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Selenium Automation with GenAI | Certification + Live Project</title>
-
-<meta name="description" content="Master Selenium Automation with Java and Generative AI. Live projects, certification, and job-oriented training."/>
+<meta name="description" content="Master Selenium Automation with Java and Generative AI. Live projects, certification, and job-oriented training.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{scroll-behavior:smooth;background:#fff;color:#333;}
+
 header{
-  position:sticky;top:0;background:#0d6efd;color:#fff;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:15px 40px;z-index:999;
+position:sticky;top:0;background:#0d6efd;color:#fff;
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 40px;z-index:999;
 }
 header nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:500;}
 
 .hero{
-  background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url('bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color:#fff;text-align:center;padding:120px 20px;
+background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('bg.png');
+background-size:cover;background-position:center;
+color:#fff;text-align:center;padding:120px 20px;
 }
 .hero h1{font-size:42px;margin-bottom:10px;}
 
 .btn{
-  background:#ffc107;color:#000;padding:12px 25px;border:none;
-  border-radius:5px;font-weight:600;cursor:pointer;margin-top:20px;
+background:#ffc107;color:#000;padding:12px 25px;border:none;
+border-radius:5px;font-weight:600;cursor:pointer;margin-top:20px;
 }
 
 /* Tabs */
-.tabs-section{padding:60px 20px;background:#fff;}
-.tabs{max-width:1100px;margin:auto;}
-.tab-buttons{display:flex;gap:10px;justify-content:center;margin-bottom:25px;flex-wrap:wrap;}
+.tabs{padding:60px 20px;max-width:1100px;margin:auto;}
+.tab-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:25px;}
 .tab-buttons button{
-  padding:12px 22px;border:none;background:#e9ecef;cursor:pointer;
-  border-radius:6px;font-weight:600;transition:.3s;
+padding:12px 22px;border:none;background:#e9ecef;border-radius:6px;
+cursor:pointer;font-weight:600;
 }
-.tab-buttons button.active{background:#0d6efd;color:#fff;}
-.tab-content{
-  display:none;background:#f8f9fa;padding:25px;border-radius:8px;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);line-height:1.7;
-}
+.tab-buttons .active{background:#0d6efd;color:#fff;}
+.tab-content{display:none;background:#f8f9fa;padding:25px;border-radius:8px;line-height:1.7;}
 .tab-content.active{display:block;}
-.tab-content h3{color:#0d6efd;margin-bottom:10px;}
 
 .section{padding:70px 20px;text-align:center;}
 .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
 .card{
-  width:280px;background:#fff;padding:22px;border-radius:10px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
-  transition:transform .3s, box-shadow .3s;
+width:280px;background:#fff;padding:22px;border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);transition:.3s;
 }
-.card:hover{transform:translateY(-8px);box-shadow:0 15px 35px rgba(0,0,0,.15);}
+.card:hover{transform:translateY(-8px);}
 
 .form-section{background:#f4f6f8;}
 form{max-width:800px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:15px;}
 form input,form select,form textarea{
-  padding:12px;border:1px solid #ccc;border-radius:5px;width:100%;
+padding:12px;border:1px solid #ccc;border-radius:5px;width:100%;
 }
-form textarea{grid-column:span 2;}
+form textarea,form button{grid-column:span 2;}
 form button{
-  grid-column:span 2;background:#0d6efd;color:#fff;
-  padding:14px;border:none;border-radius:5px;font-size:16px;
+background:#0d6efd;color:#fff;padding:14px;border:none;border-radius:5px;
 }
 
 .faq{max-width:900px;margin:auto;text-align:left;}
@@ -80,9 +69,8 @@ form button{
 footer{background:#0d6efd;color:#fff;text-align:center;padding:20px;}
 
 @media(max-width:768px){
-  .cards{flex-direction:column;align-items:center;}
-  form{grid-template-columns:1fr;}
-  form textarea,form button{grid-column:span 1;}
+.cards{flex-direction:column;align-items:center;}
+form{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -90,107 +78,105 @@ footer{background:#0d6efd;color:#fff;text-align:center;padding:20px;}
 <body>
 
 <header>
-  <div><strong>Selenium GenAI Course</strong></div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#faq">FAQ</a>
-    <a href="#enroll">Enroll</a>
-  </nav>
+<div><strong>Selenium GenAI Course</strong></div>
+<nav>
+<a href="#tabs">Course</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#enroll">Enroll</a>
+</nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>Selenium Automation With Java + Generative AI</h1>
-  <p>Certification • Live Project • Job-Oriented Training</p>
-  <a href="#enroll"><button class="btn">Enroll Now</button></a>
+<h1>Selenium Automation With Java + Generative AI</h1>
+<p>Certification • Live Project • Job-Oriented Training</p>
+<a href="#enroll"><button class="btn">Enroll Now</button></a>
 </section>
 
-<!-- Tabs Below Banner -->
-<section class="tabs-section">
-  <div class="tabs">
-    <div class="tab-buttons">
-      <button class="tab-btn active" data-tab="aboutTab">About Course</button>
-      <button class="tab-btn" data-tab="descTab">Description</button>
-      <button class="tab-btn" data-tab="curriculumTab">Course Curriculum</button>
-      <button class="tab-btn" data-tab="faqTab">FAQs</button>
-    </div>
+<!-- TABS BELOW BANNER -->
+<section id="tabs" class="tabs">
+<div class="tab-buttons">
+<button class="tab-btn active" data-tab="about">About Course</button>
+<button class="tab-btn" data-tab="desc">Description</button>
+<button class="tab-btn" data-tab="curriculum">Curriculum</button>
+<button class="tab-btn" data-tab="faqs">FAQs</button>
+</div>
 
-    <div id="aboutTab" class="tab-content active">
-      <h3>About This Course</h3>
-      <p>Industry-ready Selenium Automation training with Java and Generative AI usage in testing workflows.</p>
-    </div>
+<div id="about" class="tab-content active">
+<h3>About Course</h3>
+<p>Industry-ready Selenium Automation training with Java and GenAI usage in testing workflows and live projects.</p>
+</div>
 
-    <div id="descTab" class="tab-content">
-      <h3>Course Description</h3>
-      <p>Learn Selenium, frameworks, TestNG, Maven and integrate GenAI for faster automation development.</p>
-    </div>
+<div id="desc" class="tab-content">
+<h3>Description</h3>
+<p>Learn Selenium, TestNG, Maven, Framework design and how Generative AI speeds up test creation.</p>
+</div>
 
-    <div id="curriculumTab" class="tab-content">
-      <h3>Course Curriculum</h3>
-      <ul>
-        <li>Java for Automation</li>
-        <li>Selenium WebDriver</li>
-        <li>TestNG & Maven</li>
-        <li>Framework Design</li>
-        <li>GenAI in Testing</li>
-        <li>Live Project</li>
-      </ul>
-    </div>
+<div id="curriculum" class="tab-content">
+<h3>Course Curriculum</h3>
+<ul>
+<li>Java Basics</li>
+<li>Selenium WebDriver</li>
+<li>TestNG & Maven</li>
+<li>Framework Design (POM, Data Driven)</li>
+<li>GenAI in Automation</li>
+<li>Live Project</li>
+</ul>
+</div>
 
-    <div id="faqTab" class="tab-content">
-      <h3>FAQs</h3>
-      <p><strong>Do I need coding knowledge?</strong> Basic Java is enough.</p>
-      <p><strong>Is certification provided?</strong> Yes.</p>
-    </div>
-  </div>
+<div id="faqs" class="tab-content">
+<h3>FAQs</h3>
+<p><strong>Do I need coding?</strong> Basic Java is enough.</p>
+<p><strong>Certificate?</strong> Yes.</p>
+</div>
 </section>
 
-<!-- Rest Sections -->
+<!-- ROADMAP -->
 <section id="roadmap" class="section">
-  <h2>Course Roadmap</h2>
-  <img src="roadmap.png" alt="Roadmap" style="width:90%;max-width:850px;">
+<h2>Course Roadmap</h2>
+<img src="roadmap.png" style="width:90%;max-width:850px;">
 </section>
 
+<!-- TESTIMONIALS -->
 <section id="testimonials" class="section" style="background:#fafafa;">
-  <h2>Student Testimonials</h2>
-  <div class="cards">
-    <div class="card">"Got job after this course!"</div>
-    <div class="card">"Best Selenium + AI training"</div>
-    <div class="card">"Live project experience was amazing"</div>
-  </div>
+<h2>Student Testimonials</h2>
+<div class="cards">
+<div class="card">"Got job after this course!"</div>
+<div class="card">"Best Selenium + AI training"</div>
+<div class="card">"Live project experience was amazing"</div>
+</div>
 </section>
 
+<!-- FORM -->
 <section id="enroll" class="section form-section">
-  <h2>Enroll / Enquiry Form</h2>
-  <form action="https://formspree.io/f/abcdxyz" method="POST">
-    <input type="text" name="Full Name" placeholder="Full Name" required>
-    <input type="email" name="Email" placeholder="Email" required>
-    <input type="tel" name="Phone" placeholder="Phone / WhatsApp Number" required>
-    <textarea name="Message" rows="4" placeholder="Your Message"></textarea>
-    <button type="submit">Submit Enquiry</button>
-  </form>
+<h2>Enroll / Enquiry Form</h2>
+<form action="https://formspree.io/f/abcdxyz" method="POST">
+<input type="text" name="Name" placeholder="Full Name" required>
+<input type="email" name="Email" placeholder="Email" required>
+<input type="tel" name="Phone" placeholder="Phone" required>
+<textarea name="Message" rows="4" placeholder="Your Message"></textarea>
+<button type="submit">Submit Enquiry</button>
+</form>
 </section>
 
 <a class="whatsapp" href="https://wa.me/17324852499" target="_blank">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
 <footer>
-  © 2026 Selenium GenAI Course | Contact: +1 732-485-2499
+© 2026 Selenium GenAI Course
 </footer>
 
 <script>
 /* Tabs */
-const tabBtns=document.querySelectorAll('.tab-btn');
-const tabContents=document.querySelectorAll('.tab-content');
-tabBtns.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    tabBtns.forEach(b=>b.classList.remove('active'));
-    tabContents.forEach(c=>c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(btn.dataset.tab).classList.add('active');
-  });
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+btn.onclick=()=>{
+document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+btn.classList.add('active');
+document.getElementById(btn.dataset.tab).classList.add('active');
+};
 });
 </script>
 
