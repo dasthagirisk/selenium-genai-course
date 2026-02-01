@@ -319,8 +319,8 @@ document.getElementById(btn.dataset.tab).classList.add('active');
 });
 </script>
 
-  <script>
-const steps = document.querySelectorAll('.step');
+ <script>
+const hSteps = document.querySelectorAll('.h-step');
 
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
@@ -328,10 +328,11 @@ const observer = new IntersectionObserver(entries=>{
       entry.target.classList.add('active');
     }
   });
-},{threshold:0.2});
+},{threshold:0.3});
 
-steps.forEach(step=>observer.observe(step));
+hSteps.forEach(step=>observer.observe(step));
 </script>
+
 
 
 </body>
